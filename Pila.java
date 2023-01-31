@@ -31,17 +31,32 @@ public class Pila<E> implements IStack<E> {
      * @see IStack#peek()
      * Retorna el valor del último elemento agregado al stack
      */
+    
+    public E peek() throws EmptyStackException { // 
+        if (empty()) {
+            throw new NoSuchElementException("No se puede realizar la acción -peek- en un stack vacío.");
+        }
+        return null;
+    }
 
     /* (non-Javadoc)
      * @see IStack#empty()
      * // Revisa si hay el stack está vacío o no.
      */
+    public boolean empty() { 
+        return elementos.isEmpty();
 
+    }
 
     /* (non-Javadoc)
      * @see IStack#size()
      * // Imprime la cantidad de elementos en el stack en el momento.
      */
+    public int size() { 
+        return elementos.size();
+
+    }
+
 
 
 }
